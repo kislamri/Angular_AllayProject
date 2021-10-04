@@ -1,0 +1,57 @@
+
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h4>Create New Doccument</h4>
+                
+            </div>
+            <div class="card-body">
+                <form >
+
+                  <div class="form-group">
+                      Document Control No:<input type="text" class="form-control" name="docomentControlNo" 
+                      [(ngModel)] = "documentControlNo"
+                       placeholder="SOP123K23Z" formControlname="documentControlNo" required>
+                     </div>
+
+                     <div class="form-group">
+                      Department:<input type="text" class="form-control" name="department"
+                      [(ngModel)] = "department" 
+                      placeholder="Enter Department(optional)" formControlname="password" required> 
+                    </div>
+
+                    <div class="form-group">
+                      Created by:<input type="text" class="form-control" name="createdBy"  
+                        [(ngModel)] = "createdBy"
+                         placeholder="keyword" formControlname="createdBy" required/>
+                    </div>
+
+                    <div class="form-group">
+                      Checked by:<input type="text" class="form-control" name="checkedBy"  
+                        [(ngModel)] = "checkedBy"
+                         placeholder="keyword" formControlname="checkedBy" required/>
+                    </div>
+
+                    <div class="form-group">
+                      Approved by:<input type="text" class="form-control" name="approvedBy"  
+                        [(ngModel)] = "approvedBy"
+                         placeholder="keyword" formControlname="approvedBy" required/>
+                    </div>
+
+                    
+                </form>
+                <div class="d-flex justify-content-between">
+                  <button (click) = submit()>Submit</button>
+                  <button  (click) = cancel()>Cancel</button>
+              </div>
+
+            </div>
+            <footer class="footer" >
+              <span class="text-muted">All Rights Reserved 2021 @Allay Pharmaceuticals LLC</span> 
+          </footer>
+                
+            
+        </div>
+    </div>
+</div>
