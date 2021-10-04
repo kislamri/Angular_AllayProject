@@ -1,0 +1,29 @@
+
+                <h4>Document Management</h4>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Page Number</th>
+                        <th scope="col">View</th>
+                        <th scope="col">Download</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let item of pdfFiles">
+                        <th scope="row">{{item.name}}</th>
+                        <td>{{ item.startPage}}</td>
+                        <td>
+                            <button type="button" class="btn btn-md btn-primary"
+                            (click) ="openDoc('./assets/SOP001.pdf', item.startPage)">View</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-successbtn-md btn-primary"
+                            (click) ="downloadPdf('./assets/SOP001.pdf','your_pdf_file')">Download PDF</button>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+                
+               

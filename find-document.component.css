@@ -1,0 +1,59 @@
+.container {
+    height: 100%;
+    align-content: center;
+    padding-top: 5%;
+}
+
+.card{
+    height: 450px;
+    margin: auto;
+    margin-bottom: auto;
+    width: 500px;
+  
+    background-color: rgba(209, 208, 135, 0.5);
+}
+.card-header{
+    padding: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.form-check-lebel{
+    padding: 20px;
+}
+
+.btn{
+    
+    position:relative;
+    padding-left: 50px;
+    padding-top: 10px;
+    color: rgb(29, 60, 218);
+    font: 1em sans-serif;
+    box-shadow: slategray;
+    font-style: italic;
+    font-weight: bold;
+
+}
+.body {
+    background-color: rgba(114, 8, 79, 0.5);
+}
+
+.footer {
+    position:relative ;
+    padding-left: 15%;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #222222;
+}
+
+.form-group {
+    position: relative;
+    padding-top: auto;
+    padding-left: 20px;
+}
+.d-flex {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+}
