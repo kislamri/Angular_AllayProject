@@ -1,0 +1,39 @@
+
+
+
+  
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink= "home" class="nav-link" routerLinkActive='active'>Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink= "about" class="nav-link" routerLinkActive='active'>About</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink= "feature" class="nav-link" routerLinkActive='active'>Feature</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <li class="nav-item">
+        <a *ngIf = "userAuthenticationService.isUserLoggedIn()" routerLink= "login" class="nav-link" routerLinkActive='active'>Logout</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf = "!userAuthenticationService.isUserLoggedOut()" routerLink= "login" class="nav-link" routerLinkActive='active'>Login</a>
+      </li>
+    </ul>
+    
+    
+      <form class="d-flex input-group w-auto">
+        <input type="search" class="form-control" placeholder="Type query"
+        aria-label="Search"
+        aria-describedby="search-adon"/>
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+   
+  </nav>
+  
+  </div>
+
+<router-outlet></router-outlet>
