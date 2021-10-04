@@ -1,0 +1,43 @@
+.container {
+    height: 100%;
+    align-content: center;
+    padding-top: 5%;
+}
+
+.card{
+    height: 400px;
+    margin: auto;
+    margin-bottom: auto;
+    width: 500px;
+  
+    background-color: rgba(32, 161, 170, 0.5);
+}
+
+.form-check-lebel{
+    padding: 20px;
+}
+
+.btn{
+    
+    position: relative;
+    padding-left: 50px;
+
+}
+.footer {
+    position:relative ;
+    padding-left: 15%;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #222222;
+}
+.form-group {
+    position: relative;
+    padding-top: auto;
+    padding-left: 20px;
+}
+.d-flex {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
