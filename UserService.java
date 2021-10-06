@@ -30,9 +30,17 @@ public class UserService {
 		return userRepository.findByEmailIdAndPassword(email, password);
 	}
 
+
 	public List<User> getAllUser() {
 		
-		return ((UserService) userRepository).getAllUser();
+			return userRepository.findAll();
+	}
+
+	
+
+	public Optional<User> getById(long id) {
+	
+		return userRepository.findById((int) id);
 	}
 
 	
