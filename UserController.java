@@ -1,16 +1,19 @@
 package com.allayuser.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.allayuser.exception.RecordNotFoundException;
 import com.allayuser.model.User;
 import com.allayuser.service.UserService;
 
@@ -60,15 +63,22 @@ public class UserController {
 	}
 	 
 	 @GetMapping("/all")
-	 ResponseEntity<List<User>>getAllUser(){
-		 List<User> user = service.getAllUser();
-		return new ResponseEntity<>(user, HttpStatus.OK);
+		 ResponseEntity<List<User>>getAllUser(){
+			return new ResponseEntity<>(service.getAllUser(), HttpStatus.OK);
+			
+		 }
+	 @GetMapping("all/{id}")
+	 public ResponseEntity<User>getById(@PathVariable long id) throws RecordNotFoundException{
 		 
+		 Optional<User> user = ((UserService) service).getById(id);
+		 if(user.isPresent()) {
+			 return new ResponseEntity<>(user.get(), HttpStatus.OK);
+		 }else {
+			 throw new RecordNotFoundException();
+		 }
 	 }
-
-
-	
-
+		 
+	 
 	
 
 }
