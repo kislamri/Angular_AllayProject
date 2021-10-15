@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FindDocument } from '../find-document';
 
 @Component({
   selector: 'app-find-document',
@@ -8,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FindDocumentComponent implements OnInit {
 
-  filterBy = ''
+  filterBy = 'Enter(A-Z as index)'
   documentControlNo = ''
   department = ''
   notFound = true
@@ -16,20 +18,28 @@ export class FindDocumentComponent implements OnInit {
   pageTitle: string = 'Find Document'; 
   listFilter: string = 'doc';
  
-  document: any[] = [
+  FindDocuments!: FindDocument[];
+
+/*   document: any[] = [
     {
       "filterBy" :"",
       "documentControlNo" : "",
       "department": ""
     }
   ]
-
+ */
 
   constructor(private router:Router,
     private route: ActivatedRoute,
+    private httpClient : HttpClient,
+ 
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.httpClient.get('/assets/findDocument.json').subscribe(()=>{
+     
+    })
+    
   }
 submit(){
   console.log('submitted', this.filterBy,
@@ -43,4 +53,8 @@ newdoc(){
 cancel(){
   this.router.navigateByUrl('/home')
 }
+}
+
+function result(result: any, arg1: any) {
+  throw new Error('Function not implemented.');
 }
