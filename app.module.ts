@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { SignupComponent } from './signup/signup.component';
     FindDocumentComponent,
     FilemanagementComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
+    
     
   ],
 
