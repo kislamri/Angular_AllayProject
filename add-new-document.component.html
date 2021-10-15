@@ -42,8 +42,11 @@
                     
                 </form>
                 <div class="d-flex justify-content-between">
-                  <button (click) = submit()>Submit</button>
+                  <button (click) = saveDocument()>Submit</button>
                   <button  (click) = cancel()>Cancel</button>
+              </div>
+              <div *ngIf ="submitted">
+                <h4>New document was created successfully!</h4>
               </div>
 
             </div>
