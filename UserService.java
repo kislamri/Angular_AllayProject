@@ -4,11 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 
 import com.allayuser.model.User;
 import com.allayuser.repository.UserRepository;
@@ -42,6 +40,18 @@ public class UserService {
 	
 		return userRepository.findById((int) id);
 	}
+
+	public ResponseEntity<User> upateById(long parseLong, User userobj) {
+		
+		return null;
+	}
+
+	public Optional<User> findById(int id) {
+		
+		return userRepository.findById(id);
+	}
+
+	
 
 	
 
