@@ -10,6 +10,7 @@ import javax.persistence.Id;
 public class CreateDoc {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 	private String doccontrolNo;
 	private String department;
 	private String createdBy;
@@ -20,13 +21,26 @@ public class CreateDoc {
 	public CreateDoc() {}
 	
 
-	public CreateDoc(String doccontrolNo, String department, String createdBy, String checkedBy, String approvedBy) {
+	public CreateDoc(int id, String doccontrolNo, String department, String createdBy, String checkedBy,
+			String approvedBy) {
 		super();
+		this.id = id;
 		this.doccontrolNo = doccontrolNo;
 		this.department = department;
 		this.createdBy = createdBy;
 		this.checkedBy = checkedBy;
 		this.approvedBy = approvedBy;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 
@@ -82,9 +96,11 @@ public class CreateDoc {
 
 	@Override
 	public String toString() {
-		return "CreateDoc [doccontrolNo=" + doccontrolNo + ", department=" + department + ", createdBy=" + createdBy
-				+ ", checkedBy=" + checkedBy + ", approvedBy=" + approvedBy + "]";
+		return "CreateDoc [id=" + id + ", doccontrolNo=" + doccontrolNo + ", department=" + department + ", createdBy="
+				+ createdBy + ", checkedBy=" + checkedBy + ", approvedBy=" + approvedBy + "]";
 	}
 
+
+	
 
 }
