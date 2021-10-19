@@ -1,7 +1,10 @@
 export class Newdocument {
-    documentControlNo?:any;
-    department?: any;
-    createdBy?: any;
-    checkedBy?:any;
-    approvedBy?:any;
+    id!: number;
+    doccontrolNos!:string;
+    department!: string;
+    createdBy!: string;
+    checkedBy!:string;
+    approvedBy!:string;
+
+    constructor(){}
 }

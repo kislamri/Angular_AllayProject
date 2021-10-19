@@ -10,17 +10,18 @@ import { NewdocumentService } from '../newdocument.service';
   styleUrls: ['./add-new-document.component.css']
 })
 export class AddNewDocumentComponent implements OnInit {
-
+/*
   newdocument: Newdocument = {
     documentControlNo: '',
     department: '',
     createdBy :'',
     checkedBy: '',
     approvedBy: ''
-  };
+  }; */
   submitted = false;
-
-  documentControlNo = ''
+newDoc = new Newdocument();
+msg = '';
+  doccontrolNo = ''
   department = ''
   createdBy = ''
   checkedBy = ''
@@ -42,17 +43,30 @@ export class AddNewDocumentComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  submit(){
+ /*  submit(){
     console.log('submitted', this.createdBy,
     this.documentControlNo, this.department,
     this.checkedBy, this.approvedBy);
-    this.router.navigateByUrl('/addNewDoc');
-  }
+    this.router.navigateByUrl('/addNewDoc');codco
+  } */
 
+submit(){
+  this.newdocumentService.createDoc(this.newDoc).subscribe(
+    _data =>{
+      console.log("Document created Successfully")
+      this.router.navigateByUrl('/addNewDoc')
+    },
+    error => {
+      console.log("Exception Occured! Document is not created!");
+      this.msg = error.error;
+    }
+    
+  )
+}
   cancel(){
     this.router.navigateByUrl('/home')
   }
-
+/*
 saveDocument(): void{
   const data = {
     documentControlNo: this.newdocument.documentControlNo,
@@ -70,7 +84,7 @@ saveDocument(): void{
     }
    );
 
-  }
+  }*/
   
 }
 
